@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Sayang! 💙</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Musik Latar (Otomatis memanggil file lagu.mp3 di folder kamu) -->
+    <audio id="bg-music" loop>
+        <source src="lagu.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Kontainer Efek Stiker Melayang -->
+    <div id="floating-container"></div>
+
+    <!-- Tombol Musik -->
+    <button id="music-btn" onclick="toggleMusic()">🎵 Play Music</button>
+
+    <!-- Navigasi 3 Tab Menu -->
+    <nav class="tab-navigation">
+        <button class="tab-btn active" onclick="openTab(event, 'tab-home')">🏠 Home</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-reasons')">✨ 100 Reasons</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-chat')">💬 Message</button>
+    </nav>
+
+    <!-- ISI KONTEN UTAMA -->
+    <div class="content-container">
+        
+        <!-- TAB 1: HOME & GALERI FOTO POLAROID -->
+        <div id="tab-home" class="tab-content active">
+            <div class="welcome-box">
+                <h1>Happy Birthday, abian! 🎉💙</h1>
+                <p>Selamat ulang tahun untuk orang yang paling aku sayang. Ini hadiah kecil yang aku bikin sendiri buat kamu! Semoga kamu suka ya... 🥰</p>
+            </div>
+            
+            <!-- Galeri Foto dengan Bingkai Polaroid Aesthetic -->
+            <div class="photo-gallery">
+                <h3>Our Moments 📸</h3>
+                <div class="gallery-grid">
+                    <!-- Bingkai Foto 1 -->
+                    <div class="polaroid-frame">
+                        <div class="polaroid-pin"></div>
+                        <img src="foto1.jpg" alt="Foto 1">
+                        <div class="polaroid-caption">You 🤍</div>
+                    </div>
+                    
+                    <!-- Bingkai Foto 2 -->
+                    <div class="polaroid-frame">
+                        <div class="polaroid-pin"></div>
+                        <img src="foto2.jpg" alt="Foto 2">
+                        <div class="polaroid-caption">Us 💙</div>
+                    </div>
+                    
+                    <!-- Bingkai Foto 3 -->
+                    <div class="polaroid-frame">
+                        <div class="polaroid-pin"></div>
+                        <img src="foto3.jpg" alt="Foto 3">
+                        <div class="polaroid-caption">Fav ✨</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kartu Kutipan Elegan (SUDAH DIUBAH KE 17 TAHUN) -->
+            <div class="elegant-card">
+                <div class="quote-accent">“</div>
+                <p class="quote-text">Semoga babak baru di usiamu yang ke-17 ini membawa lebih banyak ketenangan, keberuntungan, dan pencapaian luar biasa yang sedang kamu perjuangkan.</p>
+                <div class="card-divider"></div>
+                <span class="card-status">✨ Today is your special day. Enjoy every second of it.</span>
+            </div>
+
+            <!-- Kolom Impian Interaktif (SUDAH DIUBAH KE 17 TAHUN) -->
+            <div class="wishlist-box">
+                <h3>Make a Wish for Age 17 💫</h3>
+                <p class="wishlist-desc">Tulis satu mimpi besar atau harapan yang ingin kamu capai tahun ini di kolom bawah, biar kesimpan di website kita:</p>
+                <div class="wishlist-input-group">
+                    <input type="text" id="wish-input" placeholder="Tulis harapanmu di sini...">
+                    <button onclick="saveWish()">Simpan ✨</button>
+                </div>
+                <p id="saved-wish-text"></p>
+            </div>
+        </div>
+
+        <!-- TAB 2: 100 REASONS WHY -->
+        <div id="tab-reasons" class="tab-content">
+            <h2>✨ 100 Alasan Aku Sayang Kamu ✨</h2>
+            <p>Klik tombol di bawah ini untuk memunculkan alasan manis dari aku satu per satu!</p>
+            <div class="reason-box">
+                <p id="reason-text">Klik tombol di bawah untuk mulai...</p>
+                <span id="reason-counter">Alasan #0</span>
+            </div>
+            <button id="next-reason-btn" onclick="showNextReason()">Lihat Alasan Selanjutnya 👉</button>
+        </div>
+
+        <!-- TAB 3: CHAT MESSAGE -->
+        <div id="tab-chat" class="tab-content">
+            <h2>💬 Surat Spesial Buat Kamu</h2>
+            <div class="chat-container">
+                <div class="chat-bubble incoming">
+                    <p> hii abian, ada pesan masuk nih dari cewek yang paling beruntung karena punya kamu... 👇✨</p>
+                </div>
+                
+                <div class="chat-bubble outgoing">
+                    <p class="chat-header"><b>Dari Aku Sayang:</b></p>
+                    <p>selamat bertambah usiaa, semoga hari' mu di kelilingi orang baikk, semoga semesta selalu berpihak padamuu, semoga hati mu tetep lembut, tetep kuat melewati banyak hal, dan tetep menjadi rumah yang nyaman untuk dirimu sendirii.</p>
+                    <p>terimakasi suda bertahan sejauh ini, meski dunia kadang tidak selalu ramah, semoga semesta selalu menjaga langkah mu, dipertemukan org' yang tulus, dijauhkan dari rasa kekecewaan yang terlalu dalam, dan di beri banyak hari untuk merasa cukup dan dicintai.</p>
+                    <p>karna beberapa orang hadir bukan hanya untuk singgah, tapi untuk membuat dunia terasa sedikit lebih hangat. dan semoga kamu menjadi salah satu nya.</p>
+                    <p>doa terbaik buatt km, tetep jadi abian yang ak kenal yaa. . be happyy^^ 💕💕</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

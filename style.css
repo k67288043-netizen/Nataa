@@ -1,0 +1,288 @@
+:root {
+    --baby-blue: #E3F2FD;
+    --soft-blue: #BBDEFB;
+    --sky-blue: #90CAF9;
+    --deep-blue: #42A5F5;
+    --dark-text: #37474F;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--baby-blue);
+    color: var(--dark-text);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+#music-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background-color: white;
+    border: 2px solid var(--sky-blue);
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 100;
+}
+
+.tab-navigation {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 90;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    background: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #90A4AE;
+    cursor: pointer;
+}
+
+.tab-btn.active {
+    color: var(--deep-blue);
+    border-bottom: 4px solid var(--deep-blue);
+}
+
+.content-container {
+    width: 90%;
+    max-width: 500px;
+    margin: 30px 0;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.welcome-box, .reason-box, .photo-gallery, .elegant-card, .wishlist-box {
+    background-color: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    margin-bottom: 25px;
+    box-sizing: border-box;
+}
+
+.welcome-box, .reason-box, .elegant-card, .wishlist-box {
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: var(--deep-blue);
+    margin-top: 0;
+}
+
+/* STYLING BINGKAI FOTO POLAROID AESTHETIC */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.polaroid-frame {
+    background-color: #ffffff;
+    padding: 8px 8px 15px 8px;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+    position: relative;
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.polaroid-frame:nth-child(1) { transform: rotate(-3deg); }
+.polaroid-frame:nth-child(2) { transform: rotate(2deg); }
+.polaroid-frame:nth-child(3) { transform: rotate(-1deg); }
+
+.polaroid-frame:hover {
+    transform: translateY(-5px) rotate(0deg);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+.polaroid-pin {
+    width: 12px;
+    height: 12px;
+    background-color: #D7CCC8;
+    border-radius: 50%;
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.polaroid-frame img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 2px;
+    border: 1px solid #f5f5f5;
+    display: block;
+}
+
+.polaroid-caption {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #546E7A;
+    margin-top: 8px;
+}
+
+.elegant-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.quote-accent {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 5rem;
+    color: var(--soft-blue);
+    font-family: Georgia, serif;
+    opacity: 0.3;
+}
+
+.quote-text {
+    font-style: italic;
+    font-size: 1rem;
+    color: #455A64;
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+.card-divider {
+    height: 1px;
+    background: var(--soft-blue);
+    margin: 15px auto;
+    width: 80%;
+}
+
+.card-status {
+    font-size: 0.85rem;
+    color: var(--deep-blue);
+    font-weight: 500;
+}
+
+.wishlist-desc {
+    font-size: 0.85rem;
+    color: #78909C;
+    margin-bottom: 15px;
+}
+
+.wishlist-input-group {
+    display: flex;
+    gap: 8px;
+}
+
+.wishlist-input-group input {
+    flex: 1;
+    border: 1px solid var(--soft-blue);
+    padding: 10px 15px;
+    border-radius: 20px;
+    outline: none;
+}
+
+.wishlist-input-group button {
+    background-color: var(--deep-blue);
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#saved-wish-text {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #263238;
+}
+
+#next-reason-btn {
+    width: 100%;
+    background-color: var(--deep-blue);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#reason-counter {
+    display: block;
+    margin-top: 15px;
+    color: #90A4AE;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+}
+
+.chat-bubble {
+    max-width: 85%;
+    padding: 14px 18px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.chat-bubble p {
+    margin: 0 0 10px 0;
+}
+
+.chat-bubble p:last-child {
+    margin-bottom: 0;
+}
+
+.chat-bubble.incoming {
+    background-color: white;
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+}
+
+.chat-bubble.outgoing {
+    background-color: var(--soft-blue);
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+}
+
+.sticker {
+    position: fixed;
+    font-size: 24px;
+    pointer-events: none;
+    z-index: 1;
+    animation: floatUp 6s linear infinite;
+    bottom: -50px;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-105vh) rotate(360deg); opacity: 0; }
+}
